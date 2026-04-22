@@ -1,0 +1,144 @@
+.signup-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  padding: 2rem;
+}
+
+.signup-card {
+  width: 100%;
+  max-width: 450px;
+  background: var(--bg-primary);
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-header h2 {
+  font-size: 1.875rem;
+  margin: 0 0 0.5rem;
+  color: var(--text-primary);
+}
+
+.form-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field span {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.input-shell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-shell:focus-within {
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.input-shell svg {
+  color: var(--text-secondary);
+}
+
+.input-shell input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.submit-button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+}
+
+.submit-button:hover {
+  background: var(--primary-hover);
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.login-copy {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.login-copy a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-copy a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  border: 1px solid #fca5a5;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
