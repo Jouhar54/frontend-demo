@@ -1,32 +1,38 @@
-import { Link, Outlet } from "react-router";
+import { NavLink, Outlet } from "react-router";
 import "./layout.css";
 
 function Layout() {
   return (
     <div className="app-shell">
-      <aside className="sidebar">
-        <div>
-          <p className="kicker">Sample App</p>
-          <h2 className="title">Dashboard</h2>
-        </div>
+      <nav className="navbar">
+        <div className="nav-container">
+          <div className="brand">
+            <p className="kicker">Sample App</p>
+            <h2 className="title">Dashboard</h2>
+          </div>
 
-        <nav className="nav">
-          <Link to="/home" className="nav-link">
-            Home
-          </Link>
-          <Link to="/about" className="nav-link">
-            About
-          </Link>
-          <Link to="/counter" className="nav-link">
-            Counter
-          </Link>
-        </nav>
-      </aside>
+          <div className="nav-links">
+            <NavLink to="/home" className="nav-link">
+              Home
+            </NavLink>
+            <NavLink to="/about" className="nav-link">
+              About
+            </NavLink>
+            <NavLink to="/counter" className="nav-link">
+              Counter
+            </NavLink>
+          </div>
+          
+          <div className="nav-actions">
+            <div className="user-profile">
+              <div className="avatar">JD</div>
+              <span className="username">John Doe</span>
+            </div>
+          </div>
+        </div>
+      </nav>
 
       <div className="content-area">
-        <header className="header">
-          <h1 className="header-title">Welcome</h1>
-        </header>
 
         <main className="main-content">
           <Outlet />

@@ -5,7 +5,7 @@ import Home from "../pages/home/Home";
 import Login from "../pages/login/Login";
 import Signup from "../pages/signup/Signup";
 import About from "../pages/about/About";
-import App from "../App";
+import Counter from "../pages/counter/Counter";
 
 export const router = createBrowserRouter([
   {
@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "counter",
-        element: <App />,
+        element: <Counter />,
       },
     ],
   },
