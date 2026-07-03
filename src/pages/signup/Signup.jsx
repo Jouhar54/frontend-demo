@@ -17,15 +17,17 @@ function Signup() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  console.log(name)
+
+  const handleSubmit = async (eve) => {
+    eve.preventDefault(); 
 
     try {
       await authService.signup(name, email, password);
       // Redirect to login or home after successful signup
-      navigate("/login");
+      // navigate("/login");
     } catch (err) {
-      setError(err.message || "Something went wrong during signup");
+      console.log(err)
     }
   };
 
@@ -49,7 +51,7 @@ function Signup() {
                 type="text"
                 placeholder="Enter your name"
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(eve) => setName(eve.target.value)}
                 required
               />
             </div>

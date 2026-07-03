@@ -11,15 +11,4 @@ export const authService = {
       throw error;
     }
   },
-
-  login: async (email, password) => {
-    try {
-      const response = await api.post('/login', { email, password });
-      return response.data;
-    } catch (error) {
-      console.error("Login service error:", error);
-      throw error;
-    }
-  },
 };
-
