@@ -1,14 +1,11 @@
 import api from './api';
 
-export const authService = {
+export const signup = async (payload) => {
+  const { data } = await api.post("/signup", payload);
+  return data;
+};
 
-  signup: async (name, email, password) => {
-    try {
-      const response = await api.post('/signup', { name, email, password });
-      return response.data;
-    } catch (error) {
-      console.error("Signup service error:", error);
-      throw error;
-    }
-  },
+export const login = async (payload) => {
+  const { data } = await api.post("/login", payload);
+  return data;
 };
