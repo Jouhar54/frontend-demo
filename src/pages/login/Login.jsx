@@ -8,7 +8,7 @@ import {
   Loader2,
 } from "lucide-react";
 import { authService } from "../../services/authService";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import "./login.css";
 
 function Login() {
@@ -16,6 +16,8 @@ function Login() {
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+
+  // const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,7 +27,15 @@ function Login() {
     try {
       const result = await authService.login(email, password);
       console.log("Login successful:", result);
-      // Handle successful login (e.g., store token, redirect)
+      
+      // Save the token to local storage
+      if (result && result.token) {
+        localStorage.setItem("token", result.token);
+      } else if (typeof result === 'string') {
+        // Just in case the backend returns the token directly as a string
+        localStorage.setItem("token", result);
+      }
+      
       alert("Login successful!");
     } catch (err) {
       setError(err.message || "An error occurred during login.");
